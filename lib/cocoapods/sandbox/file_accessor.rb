@@ -12,6 +12,7 @@ module Pod
       HEADER_EXTENSIONS = Xcodeproj::Constants::HEADER_FILES_EXTENSIONS
       SOURCE_FILE_EXTENSIONS = (%w(.m .mm .i .c .cc .cxx .cpp .c++ .swift) + HEADER_EXTENSIONS).uniq.freeze
 
+      # perhaps reuse or combine some of these to get subdirectory README.md files?
       GLOB_PATTERNS = {
         :readme              => 'readme{*,.*}'.freeze,
         :license             => 'licen{c,s}e{*,.*}'.freeze,
@@ -299,6 +300,7 @@ module Pod
       # @return [Pathname] The path of the auto-detected README file.
       #
       def readme
+        # gather subdirectory README.md files here?
         path_list.glob([GLOB_PATTERNS[:readme]]).first
       end
 

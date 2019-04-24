@@ -71,6 +71,7 @@ module Pod
           # Prepares the main groups to which all files will be added for the respective target
           #
           def prepare_pod_groups
+            # either handle a new type of file_accessor for e.g. "subdirectory_readme" or, if they're included in a preexisting file_accessor, add logic to account for that here?
             file_accessors.each do |file_accessor|
               pod_name = file_accessor.spec.name
               next unless sandbox.local?(pod_name)
