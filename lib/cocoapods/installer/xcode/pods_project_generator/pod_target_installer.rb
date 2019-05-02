@@ -301,6 +301,9 @@ module Pod
               end
 
               other_file_refs = project_file_references_array(other_source_files, 'other source')
+
+              # here is probably too late to gather README.md files
+
               native_target.add_file_references(other_file_refs, nil)
 
               next unless target.build_as_dynamic_framework?
